@@ -1,6 +1,12 @@
-export const login = (req, res, next) => {
-    console.log('loginUser');
-}
+export const login = async (req, res, next) => {
+    try {
+        const {fullName,username,password,confirmPassword,gender} = req.body;
+
+    } catch (error) {
+
+    }
+   
+};
 
 export const logout = (req, res, next) => {
     console.log('logoutUser');
