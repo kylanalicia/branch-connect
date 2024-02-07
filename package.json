@@ -1,0 +1,12 @@
+{
+  "name": "branch-connect",
+  "version": "1.0.0",
+  "description": "BranchConnect is a messaging web application designed to streamline customer inquiries and facilitate real-time communication between agents and customers within the Branch ecosystem.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
