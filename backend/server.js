@@ -1,6 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+
 import authRoutes from "./routes/auth.routes.js";
+import messageRoutes from "./routes/message.routes.js";
 import connectToMongoDB from './db/connectToMongoDB.js';
 
 dotenv.config();
@@ -10,9 +13,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
+app.use(cookieParser());
 
 // Route for authentication
 app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 // Root route handler
 app.get('/', (req, res) => {
