@@ -7,10 +7,11 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from './db/connectToMongoDB.js';
+import { app, server } from './socket/socket.js';
 
 dotenv.config();
 
-const app = express();
+
 const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON request bodies
@@ -33,7 +34,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectToMongoDB();
     console.log(`Server Running on port ${PORT}`);
 });
